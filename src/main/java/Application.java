@@ -1,6 +1,4 @@
-package src.main.java;
-
-import src.main.java.animals.Kotik;
+import animals.Kotik;
 
 public class Application {
     public static void main(String[] args) {
