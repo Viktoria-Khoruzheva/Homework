@@ -61,7 +61,7 @@ public class Kotik {
         Kotik.count = count;
     }
 
-    boolean play() {
+    public boolean play() {
         if (satiety > 0) {
             satiety--;
             return true;
@@ -70,7 +70,7 @@ public class Kotik {
         }
     }
 
-    boolean sleep() {
+    public boolean sleep() {
         if (satiety > 0) {
             satiety--;
             return true;
@@ -79,7 +79,7 @@ public class Kotik {
         }
     }
 
-    boolean wash() {
+    public boolean wash() {
         if (satiety > 0) {
             satiety--;
             return true;
@@ -88,7 +88,7 @@ public class Kotik {
         }
     }
 
-    boolean walk() {
+    public boolean walk() {
         if (satiety > 0) {
             satiety--;
             return true;
@@ -97,7 +97,7 @@ public class Kotik {
         }
     }
 
-    boolean hunt() {
+    public boolean hunt() {
         if (satiety > 0) {
             satiety--;
             return true;
@@ -106,15 +106,15 @@ public class Kotik {
         }
     }
 
-    void eat(int satiety) {
+    public void eat(int satiety) {
         this.satiety = this.satiety + satiety;
     }
 
-    void eat(int satiety, String food) {
+    public void eat(int satiety, String food) {
         eat(satiety);
     }
 
-    void eat() {
+    public void eat() {
         eat(4, "корм");
     }
 
