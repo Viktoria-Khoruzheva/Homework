@@ -1,17 +1,17 @@
-package main.java.animals;
+package animals;
 
-public class Kotik {
+import food.Meat;
+
+public class Kotik extends Carnivorous implements Run, Voice {
     private String name;
-    private String voice;
-    private int satiety;
+    private String voice = "мяу";
     private int weight;
     private static int count;
-    private final int METHODS = 5;
+    private final static int METHODS = 5;
 
-    public Kotik(String name, String voice, int satiety, int weight) {
+    public Kotik(String name, String voice, int weight) {
         this.name = name;
         this.voice = voice;
-        this.satiety = satiety;
         this.weight = weight;
         Kotik.count++;
     }
@@ -28,9 +28,6 @@ public class Kotik {
         return voice;
     }
 
-    public int getSatiety() {
-        return satiety;
-    }
 
     public int getWeight() {
         return weight;
@@ -49,77 +46,61 @@ public class Kotik {
         this.voice = voice;
     }
 
-    public void setSatiety(int satiety) {
-        this.satiety = satiety;
-    }
 
     public void setWeight(int weight) {
         this.weight = weight;
     }
 
-    public static void setCount(int count) {
-        Kotik.count = count;
-    }
 
-    boolean play() {
-        if (satiety > 0) {
-            satiety--;
+    private boolean play() {
+        if (getSatiety() > 0) {
+            setSatiety(getSatiety() - 1);
             return true;
         } else {
             return false;
         }
     }
 
-    boolean sleep() {
-        if (satiety > 0) {
-            satiety--;
+    private boolean sleep() {
+        if (getSatiety() > 0) {
+            setSatiety(getSatiety() - 1);
             return true;
         } else {
             return false;
         }
     }
 
-    boolean wash() {
-        if (satiety > 0) {
-            satiety--;
+    private boolean wash() {
+        if (getSatiety() > 0) {
+            setSatiety(getSatiety() - 1);
             return true;
         } else {
             return false;
         }
     }
 
-    boolean walk() {
-        if (satiety > 0) {
-            satiety--;
+    private boolean walk() {
+        if (getSatiety() > 0) {
+            setSatiety(getSatiety() - 1);
             return true;
         } else {
             return false;
         }
     }
 
-    boolean hunt() {
-        if (satiety > 0) {
-            satiety--;
+    private boolean hunt() {
+        if (getSatiety() > 0) {
+            setSatiety(getSatiety() - 1);
             return true;
         } else {
             return false;
         }
     }
 
-    void eat(int satiety) {
-        this.satiety = this.satiety + satiety;
-    }
-
-    void eat(int satiety, String food) {
-        eat(satiety);
-    }
-
-    void eat() {
-        eat(4, "корм");
-    }
 
     public String[] liveAnotherDay() {
         String[] actions = new String[24];
+        Meat meat = new Meat();
         for (int i = 0; i < 24; i++) {
             int random = (int) (Math.random() * METHODS) + 1;
             switch (random) {
@@ -128,7 +109,7 @@ public class Kotik {
                         actions[i] = i + " - играл";
                     } else {
                         actions[i] = i + " - ел";
-                        eat();
+                        eat(meat);
                     }
                     break;
                 case 2:
@@ -136,7 +117,7 @@ public class Kotik {
                         actions[i] = i + " - спал";
                     } else {
                         actions[i] = i + " - ел";
-                        eat();
+                        eat(meat);
                     }
                     break;
                 case 3:
@@ -144,7 +125,7 @@ public class Kotik {
                         actions[i] = i + " - умывался";
                     } else {
                         actions[i] = i + " - ел";
-                        eat();
+                        eat(meat);
                     }
                     break;
                 case 4:
@@ -152,7 +133,7 @@ public class Kotik {
                         actions[i] = i + " - гулял";
                     } else {
                         actions[i] = i + " - ел";
-                        eat();
+                        eat(meat);
                     }
                     break;
                 case 5:
@@ -160,13 +141,18 @@ public class Kotik {
                         actions[i] = i + " - охотился";
                     } else {
                         actions[i] = i + " - ел";
-                        eat();
+                        eat(meat);
                     }
                     break;
 
             }
         }
         return actions;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Котик бежит");
     }
 
 }
