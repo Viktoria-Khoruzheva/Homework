@@ -6,11 +6,10 @@ import model.Aviary;
 import model.Size;
 
 public class Zoo {
-    private static Aviary<Carnivorous> carnivorousAviary = fillCarnivorousAviary();
-    private static Aviary<Herbivore> herbivoreAviary = fillHerbivoreAviary();
+    private static Aviary<Carnivorous> carnivorousAviary = new Aviary<>(Size.MEDIUM);
+    private static Aviary<Herbivore> herbivoreAviary = new Aviary<>(Size.SMALL);
 
     public static void main(String[] args) {
-
         Deer deer = new Deer("Петр");
         Duck duck = new Duck("Лариса");
         Falcon falcon = new Falcon("Макс");
@@ -41,9 +40,11 @@ public class Zoo {
             swim.swim();
         }
 
+        fillCarnivorousAviary(carnivorousAviary);
+        fillHerbivoreAviary(herbivoreAviary);
         Carnivorous animal1 = getCarnivorous("Макс");
         System.out.println(animal1);
-        Herbivore animal2 = getHerbivorous("Лариса");
+        Herbivore animal2 = getHerbivore("Лариса");
         System.out.println(animal2);
         System.out.println(carnivorousAviary.removeAnimal("Макс"));
     }
@@ -58,29 +59,25 @@ public class Zoo {
         return swims;
     }
 
-    private static Aviary<Carnivorous> fillCarnivorousAviary() {
+    private static void fillCarnivorousAviary(Aviary <animals.Carnivorous>carnivorousAviary) {
         Fish fish = new Fish("Толя");
         Falcon falcon = new Falcon("Макс");
-        Aviary<Carnivorous> carnivorousAviary = new Aviary<>(Size.MEDIUM);
         carnivorousAviary.addAnimal(fish);
         carnivorousAviary.addAnimal(falcon);
-        return carnivorousAviary;
     }
 
-    private static Aviary<Herbivore> fillHerbivoreAviary() {
+    private static void fillHerbivoreAviary(Aviary <Herbivore> herbivoreAviary) {
         Duck duck = new Duck("Лариса");
         Rabbit rabbit = new Rabbit("Светлана");
-        Aviary<Herbivore> herbivoreAviary = new Aviary<>(Size.SMALL);
         herbivoreAviary.addAnimal(duck);
         herbivoreAviary.addAnimal(rabbit);
-        return herbivoreAviary;
     }
 
     private static Carnivorous getCarnivorous(String name) {
         return carnivorousAviary.getAnimal(name);
     }
 
-    private static Herbivore getHerbivorous(String name) {
+    private static Herbivore getHerbivore(String name) {
         return herbivoreAviary.getAnimal(name);
     }
 }
