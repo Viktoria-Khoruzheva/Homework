@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class Aviary<T extends Animal> {
     private Size size;
-    private Map<String, T> aviaryMap = new HashMap<>();
+    private HashMap<String, T> aviaryMap = new HashMap<>();
 
     public Aviary(Size size) {
         this.size = size;

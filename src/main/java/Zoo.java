@@ -40,8 +40,8 @@ public class Zoo {
             swim.swim();
         }
 
-        fillCarnivorousAviary(carnivorousAviary);
-        fillHerbivoreAviary(herbivoreAviary);
+        fillCarnivorousAviary();
+        fillHerbivoreAviary();
         Carnivorous animal1 = getCarnivorous("Макс");
         System.out.println(animal1);
         Herbivore animal2 = getHerbivore("Лариса");
@@ -59,14 +59,14 @@ public class Zoo {
         return swims;
     }
 
-    private static void fillCarnivorousAviary(Aviary <animals.Carnivorous>carnivorousAviary) {
+    private static void fillCarnivorousAviary() {
         Fish fish = new Fish("Толя");
         Falcon falcon = new Falcon("Макс");
         carnivorousAviary.addAnimal(fish);
         carnivorousAviary.addAnimal(falcon);
     }
 
-    private static void fillHerbivoreAviary(Aviary <Herbivore> herbivoreAviary) {
+    private static void fillHerbivoreAviary() {
         Duck duck = new Duck("Лариса");
         Rabbit rabbit = new Rabbit("Светлана");
         herbivoreAviary.addAnimal(duck);
