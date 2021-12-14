@@ -1,6 +1,10 @@
 package animals;
 
 import food.Meat;
+import food.WrongFoodException;
+import model.Size;
+
+import static model.Size.SMALL;
 
 public class Kotik extends Carnivorous implements Run, Voice {
     private String name;
@@ -10,13 +14,14 @@ public class Kotik extends Carnivorous implements Run, Voice {
     private final static int METHODS = 5;
 
     public Kotik(String name, String voice, int weight) {
-        this.name = name;
+        super(name);
         this.voice = voice;
         this.weight = weight;
         Kotik.count++;
     }
 
-    public Kotik() {
+    public Kotik(String name) {
+        super(name);
         Kotik.count++;
     }
 
@@ -109,7 +114,11 @@ public class Kotik extends Carnivorous implements Run, Voice {
                         actions[i] = i + " - играл";
                     } else {
                         actions[i] = i + " - ел";
-                        eat(meat);
+                        try {
+                            eat(meat);
+                        } catch (WrongFoodException e) {
+                            e.printStackTrace();
+                        }
                     }
                     break;
                 case 2:
@@ -117,7 +126,11 @@ public class Kotik extends Carnivorous implements Run, Voice {
                         actions[i] = i + " - спал";
                     } else {
                         actions[i] = i + " - ел";
-                        eat(meat);
+                        try {
+                            eat(meat);
+                        } catch (WrongFoodException e) {
+                            e.printStackTrace();
+                        }
                     }
                     break;
                 case 3:
@@ -125,7 +138,11 @@ public class Kotik extends Carnivorous implements Run, Voice {
                         actions[i] = i + " - умывался";
                     } else {
                         actions[i] = i + " - ел";
-                        eat(meat);
+                        try {
+                            eat(meat);
+                        } catch (WrongFoodException e) {
+                            e.printStackTrace();
+                        }
                     }
                     break;
                 case 4:
@@ -133,7 +150,11 @@ public class Kotik extends Carnivorous implements Run, Voice {
                         actions[i] = i + " - гулял";
                     } else {
                         actions[i] = i + " - ел";
-                        eat(meat);
+                        try {
+                            eat(meat);
+                        } catch (WrongFoodException e) {
+                            e.printStackTrace();
+                        }
                     }
                     break;
                 case 5:
@@ -141,7 +162,11 @@ public class Kotik extends Carnivorous implements Run, Voice {
                         actions[i] = i + " - охотился";
                     } else {
                         actions[i] = i + " - ел";
-                        eat(meat);
+                        try {
+                            eat(meat);
+                        } catch (WrongFoodException e) {
+                            e.printStackTrace();
+                        }
                     }
                     break;
 
@@ -155,4 +180,8 @@ public class Kotik extends Carnivorous implements Run, Voice {
         System.out.println("Котик бежит");
     }
 
+    @Override
+    public Size getSize() {
+        return SMALL;
+    }
 }

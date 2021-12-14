@@ -1,9 +1,16 @@
 package animals;
 
 import food.Food;
+import food.WrongFoodException;
+import model.Size;
 
 public abstract class Animal {
     private int satiety;
+    private String name;
+
+    public Animal(String name) {
+        this.name = name;
+    }
 
     public int getSatiety() {
         return satiety;
@@ -13,5 +20,15 @@ public abstract class Animal {
         this.satiety = satiety;
     }
 
-    public abstract void eat(Food food);
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public abstract void eat(Food food) throws WrongFoodException;
+
+    public abstract Size getSize();
 }
