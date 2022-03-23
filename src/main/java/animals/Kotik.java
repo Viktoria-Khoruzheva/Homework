@@ -11,7 +11,7 @@ public class Kotik extends Carnivorous implements Run, Voice {
     private String voice = "мяу";
     private int weight;
     private static int count;
-    private final static int METHODS = 5;
+    private static final int METHODS = 5;
 
     public Kotik(String name, String voice, int weight) {
         super(name);
@@ -33,7 +33,6 @@ public class Kotik extends Carnivorous implements Run, Voice {
         return voice;
     }
 
-
     public int getWeight() {
         return weight;
     }
@@ -51,11 +50,9 @@ public class Kotik extends Carnivorous implements Run, Voice {
         this.voice = voice;
     }
 
-
     public void setWeight(int weight) {
         this.weight = weight;
     }
-
 
     private boolean play() {
         if (getSatiety() > 0) {
@@ -101,7 +98,6 @@ public class Kotik extends Carnivorous implements Run, Voice {
             return false;
         }
     }
-
 
     public String[] liveAnotherDay() {
         String[] actions = new String[24];

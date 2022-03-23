@@ -6,7 +6,6 @@ import static model.Size.MEDIUM;
 
 public class Fish extends Carnivorous implements Swim {
 
-
     public Fish(String name) {
         super(name);
     }

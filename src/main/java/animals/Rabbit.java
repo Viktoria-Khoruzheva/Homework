@@ -6,7 +6,6 @@ import static model.Size.SMALL;
 
 public class Rabbit extends Herbivore implements Run {
 
-
     public Rabbit(String name) {
         super(name);
     }

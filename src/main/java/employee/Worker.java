@@ -5,7 +5,6 @@ import animals.Voice;
 import food.Food;
 import food.WrongFoodException;
 
-
 public class Worker {
     public void feed(Animal animal, Food food) {
         try {

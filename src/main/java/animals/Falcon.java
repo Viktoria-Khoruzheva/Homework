@@ -6,7 +6,6 @@ import static model.Size.MEDIUM;
 
 public class Falcon extends Carnivorous implements Run, Fly, Voice {
 
-
     public Falcon(String name) {
         super(name);
     }

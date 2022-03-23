@@ -6,7 +6,6 @@ import static model.Size.LARGE;
 
 public class Deer extends Herbivore implements Run, Voice {
 
-
     public Deer(String name) {
         super(name);
     }

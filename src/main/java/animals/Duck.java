@@ -6,7 +6,6 @@ import static model.Size.SMALL;
 
 public class Duck extends Herbivore implements Run, Swim, Fly, Voice {
 
-
     public Duck(String name) {
         super(name);
     }
