@@ -25,6 +25,7 @@
                 </executions>
                 <configuration>
                     <configLocation>src/main/resources/checkstyle/checksWrike.xml</configLocation>
+                    <outputFile>${project.build.directory}/checkstyle/checkstyle-result.html</outputFile>
                     <encoding>UTF-8</encoding>
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>false</failsOnError>
@@ -44,9 +45,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <configuration>
-                    <configLocation>src/main/resources/checkstyle/checksWrike.xml</configLocation>
-                </configuration>
                 <reportSets>
                     <reportSet>
                         <reports>
