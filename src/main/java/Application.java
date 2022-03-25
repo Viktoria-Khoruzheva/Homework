@@ -1,11 +1,9 @@
-package main.java;
-
-import main.java.animals.Kotik;
+import animals.Kotik;
 
 public class Application {
     public static void main(String[] args) {
-        Kotik kotik1 = new Kotik("Пушок", "мяу", 8, 3000);
-        Kotik kotik2 = new Kotik();
+        Kotik kotik1 = new Kotik("Пушок", "мяу", 3000);
+        Kotik kotik2 = new Kotik("Вася");
         kotik2.setName("Орешек");
         kotik2.setVoice("мяу");
         kotik2.setSatiety(0);
