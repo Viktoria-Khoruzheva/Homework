@@ -5,8 +5,6 @@ import food.Meat;
 import model.Aviary;
 import model.Size;
 
-
-
 public class Zoo {
     private static Aviary<Carnivorous> carnivorousAviary = new Aviary<>(Size.MEDIUM);
     private static Aviary<Herbivore> herbivoreAviary = new Aviary<>(Size.SMALL);

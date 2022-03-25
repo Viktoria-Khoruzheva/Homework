@@ -3,9 +3,6 @@ package model;
 import animals.Animal;
 
 import java.util.HashMap;
-import java.util.Map;
-
-
 
 public class Aviary<T extends Animal> {
     private Size size;
